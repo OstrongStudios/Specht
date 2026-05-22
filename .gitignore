@@ -60,6 +60,11 @@ desktop.ini
 ## App-Asset-Previews (nur Vorschauen, kein Repo-Inhalt)
 src/Specht.App/Assets/preview/
 
+## Interne Submission-Unterlagen (Store-Texte, Marketing, Screenshots)
+docs/STORE_*.md
+docs/PARTNER_CENTER_*.md
+docs/screenshots/
+
 ## Spike (Throwaway)
 spike/bin/
 spike/obj/
