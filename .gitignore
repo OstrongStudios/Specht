@@ -54,7 +54,7 @@ Thumbs.db
 desktop.ini
 .DS_Store
 
-## Claude Code lokale Einstellungen
+## Lokale Editor-Konfiguration
 .claude/
 
 ## App-Asset-Previews (nur Vorschauen, kein Repo-Inhalt)
