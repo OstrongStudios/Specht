@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- App / Tray -->
+  <data name="AppTooltip" xml:space="preserve"><value>Specht – mDNS Spotter</value></data>
+  <data name="TrayOpen" xml:space="preserve"><value>Öffnen</value></data>
+  <data name="TrayRefresh" xml:space="preserve"><value>Aktualisieren</value></data>
+  <data name="TraySettings" xml:space="preserve"><value>Einstellungen</value></data>
+  <data name="TrayAbout" xml:space="preserve"><value>Über Specht</value></data>
+  <data name="TrayExit" xml:space="preserve"><value>Beenden</value></data>
+
+  <!-- Main page header -->
+  <data name="SearchBox.PlaceholderText" xml:space="preserve"><value>Suche…</value></data>
+  <data name="RefreshButton.ToolTip" xml:space="preserve"><value>Aktualisieren</value></data>
+  <data name="MoreButton.ToolTip" xml:space="preserve"><value>Mehr</value></data>
+  <data name="MenuExportCsv.Text" xml:space="preserve"><value>Als CSV exportieren…</value></data>
+  <data name="MenuExportJson.Text" xml:space="preserve"><value>Als JSON exportieren…</value></data>
+  <data name="MenuSettings.Text" xml:space="preserve"><value>Einstellungen</value></data>
+  <data name="MenuAbout.Text" xml:space="preserve"><value>Über Specht</value></data>
+  <data name="MenuExit.Text" xml:space="preserve"><value>Beenden</value></data>
+
+  <!-- Filter chips -->
+  <data name="FilterAll.Text" xml:space="preserve"><value>Alle</value></data>
+
+  <!-- Detail page -->
+  <data name="DetailBackButton.ToolTip" xml:space="preserve"><value>Zurück</value></data>
+  <data name="DetailCopyJsonButton.ToolTip" xml:space="preserve"><value>Als JSON kopieren</value></data>
+  <data name="DetailConnectionHeader.Text" xml:space="preserve"><value>Verbindung</value></data>
+  <data name="DetailIdentityHeader.Text" xml:space="preserve"><value>Identität</value></data>
+  <data name="DetailTxtHeader.Text" xml:space="preserve"><value>TXT-Records</value></data>
+  <data name="DetailActivityHeader.Text" xml:space="preserve"><value>Aktivität</value></data>
+  <data name="DetailLabelIpv4.Text" xml:space="preserve"><value>IPv4</value></data>
+  <data name="DetailLabelIpv6.Text" xml:space="preserve"><value>IPv6</value></data>
+  <data name="DetailLabelPort.Text" xml:space="preserve"><value>Port</value></data>
+  <data name="DetailLabelHostname.Text" xml:space="preserve"><value>Hostname</value></data>
+  <data name="DetailLabelService.Text" xml:space="preserve"><value>Service</value></data>
+  <data name="DetailLabelInstance.Text" xml:space="preserve"><value>Instanz</value></data>
+  <data name="DetailLabelFirstSeen.Text" xml:space="preserve"><value>Erstmals gesehen</value></data>
+  <data name="DetailLabelLastSeen.Text" xml:space="preserve"><value>Zuletzt gesehen</value></data>
+  <data name="DetailLabelSource.Text" xml:space="preserve"><value>Quelle</value></data>
+  <data name="DetailTxtBinaryTip" xml:space="preserve"><value>Binärwert in Hex dargestellt</value></data>
+  <data name="DetailNoTxt.Text" xml:space="preserve"><value>(keine TXT-Records)</value></data>
+
+  <!-- Settings page -->
+  <data name="SettingsBackButton.ToolTip" xml:space="preserve"><value>Zurück</value></data>
+  <data name="SettingsTitle.Text" xml:space="preserve"><value>Einstellungen</value></data>
+  <data name="SettingsGeneralHeader.Text" xml:space="preserve"><value>Allgemein</value></data>
+  <data name="SettingsAutostart.Header" xml:space="preserve"><value>Mit Windows starten</value></data>
+  <data name="SettingsAutostart.OnContent" xml:space="preserve"><value>An</value></data>
+  <data name="SettingsAutostart.OffContent" xml:space="preserve"><value>Aus</value></data>
+  <data name="SettingsToast.Header" xml:space="preserve"><value>Benachrichtigung bei neuen Geräten</value></data>
+  <data name="SettingsToast.OnContent" xml:space="preserve"><value>An</value></data>
+  <data name="SettingsToast.OffContent" xml:space="preserve"><value>Aus</value></data>
+  <data name="SettingsAppearanceHeader.Text" xml:space="preserve"><value>Darstellung</value></data>
+  <data name="SettingsTheme.Header" xml:space="preserve"><value>Theme</value></data>
+  <data name="SettingsLanguage.Header" xml:space="preserve"><value>Sprache</value></data>
+  <data name="SettingsDiscoveryHeader.Text" xml:space="preserve"><value>Discovery</value></data>
+  <data name="SettingsScanInterval.Header" xml:space="preserve"><value>Scan-Intervall</value></data>
+  <data name="SettingsScanContinuous.Content" xml:space="preserve"><value>Kontinuierlich</value></data>
+  <data name="SettingsScan30.Content" xml:space="preserve"><value>Alle 30 Sekunden</value></data>
+  <data name="SettingsScan60.Content" xml:space="preserve"><value>Alle 60 Sekunden</value></data>
+  <data name="SettingsScan300.Content" xml:space="preserve"><value>Alle 300 Sekunden</value></data>
+  <data name="SettingsResetHeader.Text" xml:space="preserve"><value>Zurücksetzen</value></data>
+  <data name="SettingsResetButton.Content" xml:space="preserve"><value>Alle Einstellungen zurücksetzen</value></data>
+  <data name="SettingsRestartHint.Text" xml:space="preserve"><value>Beim Wechsel der Sprache startet Specht automatisch neu.</value></data>
+  <data name="SettingsLanguageDescription.Text" xml:space="preserve"><value>App startet automatisch neu</value></data>
+
+  <!-- About page -->
+  <data name="AboutBackButton.ToolTip" xml:space="preserve"><value>Zurück</value></data>
+  <data name="AboutTitle.Text" xml:space="preserve"><value>Über</value></data>
+  <data name="AboutTagline.Text" xml:space="preserve"><value>Klopf klopf — wer wohnt im Netzwerk?</value></data>
+  <data name="AboutPublisherHeader.Text" xml:space="preserve"><value>Herausgeber</value></data>
+  <data name="AboutLicenseHeader.Text" xml:space="preserve"><value>Lizenz</value></data>
+  <data name="AboutLicenseText.Text" xml:space="preserve"><value>Specht ist freie Software unter der GNU General Public License v3.</value></data>
+  <data name="AboutThirdPartyHeader.Text" xml:space="preserve"><value>Drittsoftware</value></data>
+  <data name="AboutTrademarksHeader.Text" xml:space="preserve"><value>Markenhinweise</value></data>
+  <data name="AboutTrademarksText.Text" xml:space="preserve"><value>Nicht von Apple Inc. Bonjour ist eine eingetragene Marke von Apple Inc. AirPlay und HomeKit sind Marken von Apple Inc. Chromecast ist eine Marke von Google LLC. Windows und .NET sind Marken der Microsoft Corporation.</value></data>
+
+  <!-- Status / dynamic strings (formatted from code) -->
+  <data name="StatusStarting" xml:space="preserve"><value>Starte Discovery…</value></data>
+  <data name="StatusRefreshing" xml:space="preserve"><value>Aktualisiere…</value></data>
+  <data name="StatusFormat" xml:space="preserve"><value>{0} von {1} Geräten · {2}</value></data>
+  <data name="ValueUnknown" xml:space="preserve"><value>(unbekannt)</value></data>
+  <data name="ValueNone" xml:space="preserve"><value>(keine)</value></data>
+
+  <!-- Toast -->
+  <data name="ToastNewDeviceTitle" xml:space="preserve"><value>Neues Gerät im Netzwerk</value></data>
+
+  <!-- Empty states -->
+  <data name="EmptyNoNetworkHeader" xml:space="preserve"><value>Keine Netzwerkverbindung</value></data>
+  <data name="EmptyNoNetworkDetail" xml:space="preserve"><value>Verbinde dich mit einem Netzwerk, damit Specht andere Geräte finden kann.</value></data>
+  <data name="EmptyNoResponsesHeader" xml:space="preserve"><value>Keine mDNS-Antworten empfangen</value></data>
+  <data name="EmptyNoResponsesDetail" xml:space="preserve"><value>Möglicherweise blockiert die Windows-Firewall UDP-Port 5353. Erlaube Specht oder UDP/5353 in den Firewall-Einstellungen.</value></data>
+  <data name="EmptyVpnHeader" xml:space="preserve"><value>VPN-Verbindung erkannt</value></data>
+  <data name="EmptyVpnDetail" xml:space="preserve"><value>Während ein VPN aktiv ist, blockieren viele Clients mDNS-Multicast. Trenne das VPN, um lokale Geräte zu sehen.</value></data>
+
+  <!-- Advanced settings -->
+  <data name="SettingsAdvancedHeader.Text" xml:space="preserve"><value>Erweitert</value></data>
+  <data name="SettingsCategoryFiltersHeader.Text" xml:space="preserve"><value>Sichtbare Gerätekategorien</value></data>
+
+  <!-- Theme + language values -->
+  <data name="ThemeSystem" xml:space="preserve"><value>System</value></data>
+  <data name="ThemeDark" xml:space="preserve"><value>Dunkel</value></data>
+  <data name="ThemeLight" xml:space="preserve"><value>Hell</value></data>
+  <data name="ThemeSystemItem.Content" xml:space="preserve"><value>System</value></data>
+  <data name="ThemeDarkItem.Content" xml:space="preserve"><value>Dunkel</value></data>
+  <data name="ThemeLightItem.Content" xml:space="preserve"><value>Hell</value></data>
+  <data name="LanguageSystem" xml:space="preserve"><value>System</value></data>
+  <data name="LanguageGerman" xml:space="preserve"><value>Deutsch</value></data>
+  <data name="LanguageEnglish" xml:space="preserve"><value>Englisch</value></data>
+  <data name="LanguageSystemItem.Content" xml:space="preserve"><value>System</value></data>
+  <data name="LanguageGermanItem.Content" xml:space="preserve"><value>Deutsch</value></data>
+  <data name="LanguageEnglishItem.Content" xml:space="preserve"><value>Englisch</value></data>
+
+  <!-- Export -->
+  <data name="ExportFileBaseName" xml:space="preserve"><value>Specht-Geraete</value></data>
+</root>

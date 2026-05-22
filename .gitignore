@@ -1,0 +1,68 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+.vs/
+
+## Build artifacts
+*.dll
+*.pdb
+*.exe
+!**/Assets/**/*.exe
+*.nupkg
+*.snupkg
+publish/
+PublishProfiles/
+
+## MSIX-Pakete (Output)
+AppPackages/
+BundleArtifacts/
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.cer
+
+## Signing-Material — NIE commiten
+*.pfx
+*.snk
+
+## Test-Output
+TestResults/
+[Tt]est[Rr]esults/
+coverage*.json
+coverage*.xml
+*.coverage
+*.coveragexml
+
+## NuGet
+packages/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.assets.json
+artifacts/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+## Claude Code lokale Einstellungen
+.claude/
+
+## App-Asset-Previews (nur Vorschauen, kein Repo-Inhalt)
+src/Specht.App/Assets/preview/
+
+## Spike (Throwaway)
+spike/bin/
+spike/obj/
+
+## Logs
+*.log

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <!--
+    Identity:
+    - Name: muss aus dem Microsoft Partner Center kommen, nachdem dort der
+      App-Name "Specht" unter dem OstrongStudios-Account reserviert wurde.
+      Bis dahin als Platzhalter mit dem Spieglein-Prefix versehen, damit das
+      Manifest sich lokal bauen lässt — ersetzen vor Store-Submission!
+    - Publisher: identisch zur Spieglein-Identity (selber Publisher-Account).
+  -->
+  <Identity
+    Name="4663Ostronggames.Specht"
+    Publisher="CN=654B9AD8-3E71-4D00-B420-E162C13CD666"
+    Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>Specht</DisplayName>
+    <PublisherDisplayName>OstrongStudios</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Klopf klopf – wer wohnt im Netzwerk? Zeigt alle Geräte im lokalen Netzwerk, die per mDNS / Bonjour erreichbar sind. 100 % lokal, keine Telemetrie.</Description>
+  </Properties>
+
+  <Resources>
+    <Resource Language="de-DE" />
+    <Resource Language="en-US" />
+  </Resources>
+
+  <Dependencies>
+    <!--
+      MinVersion 19041 = Windows 10 20H1 / Mai 2020 (Spec §5 Kompatibilität).
+      MaxVersionTested = Windows 11 24H2 / 2024 — das ist Stand Mai 2026 die
+      aktuelle Mainstream-Win-11-Version; wir testen Specht hier drauf.
+    -->
+    <TargetDeviceFamily
+      Name="Windows.Desktop"
+      MinVersion="10.0.19041.0"
+      MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Applications>
+    <Application Id="App" Executable="Specht.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements
+        DisplayName="Specht"
+        Description="mDNS Spotter – findet Bonjour-Geräte im LAN"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        BackgroundColor="transparent">
+        <uap:DefaultTile
+          Wide310x150Logo="Assets\Wide310x150Logo.png"
+          Square71x71Logo="Assets\SmallTile.png"
+          Square310x310Logo="Assets\LargeTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <!-- runFullTrust is required for Win32 / WinUI 3 desktop apps. -->
+    <rescap:Capability Name="runFullTrust" />
+    <!-- mDNS multicast on the local link. -->
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Specht.App.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Specht.App.Localization">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="8,8,12,8" ColumnSpacing="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" ToolTipService.ToolTip="{loc:Translate Key=SettingsBackButton.ToolTip}" Click="OnBack" Background="Transparent" BorderBrush="Transparent">
+                <FontIcon Glyph="&#xE72B;" />
+            </Button>
+            <TextBlock Grid.Column="1" Text="{loc:Translate Key=SettingsTitle.Text}" Style="{ThemeResource SubtitleTextBlockStyle}" VerticalAlignment="Center" Margin="4,0,0,0" />
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" Padding="16,0,16,16">
+            <StackPanel Spacing="20">
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{loc:Translate Key=SettingsGeneralHeader.Text}" Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                    <ToggleSwitch
+                        Header="{loc:Translate Key=SettingsAutostart.Header}"
+                        OnContent="{loc:Translate Key=SettingsAutostart.OnContent}"
+                        OffContent="{loc:Translate Key=SettingsAutostart.OffContent}"
+                        IsOn="{x:Bind ViewModel.Autostart, Mode=TwoWay}" />
+                    <ToggleSwitch
+                        Header="{loc:Translate Key=SettingsToast.Header}"
+                        OnContent="{loc:Translate Key=SettingsToast.OnContent}"
+                        OffContent="{loc:Translate Key=SettingsToast.OffContent}"
+                        IsOn="{x:Bind ViewModel.ToastOnNewDevice, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{loc:Translate Key=SettingsAppearanceHeader.Text}" Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                    <ComboBox
+                        Header="{loc:Translate Key=SettingsTheme.Header}"
+                        SelectedIndex="{x:Bind ThemeIndex, Mode=TwoWay}"
+                        Width="200">
+                        <ComboBoxItem Content="{loc:Translate Key=ThemeSystemItem.Content}" Tag="System" />
+                        <ComboBoxItem Content="{loc:Translate Key=ThemeDarkItem.Content}" Tag="Dark" />
+                        <ComboBoxItem Content="{loc:Translate Key=ThemeLightItem.Content}" Tag="Light" />
+                    </ComboBox>
+                    <ComboBox
+                        Header="{loc:Translate Key=SettingsLanguage.Header}"
+                        Description="{loc:Translate Key=SettingsLanguageDescription.Text}"
+                        SelectedIndex="{x:Bind LanguageIndex, Mode=TwoWay}"
+                        Width="200">
+                        <ComboBoxItem Content="{loc:Translate Key=LanguageSystemItem.Content}" Tag="System" />
+                        <ComboBoxItem Content="{loc:Translate Key=LanguageGermanItem.Content}" Tag="de" />
+                        <ComboBoxItem Content="{loc:Translate Key=LanguageEnglishItem.Content}" Tag="en" />
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{loc:Translate Key=SettingsDiscoveryHeader.Text}" Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                    <ComboBox
+                        Header="{loc:Translate Key=SettingsScanInterval.Header}"
+                        SelectedIndex="{x:Bind ScanIndex, Mode=TwoWay}"
+                        Width="240">
+                        <ComboBoxItem Content="{loc:Translate Key=SettingsScanContinuous.Content}" />
+                        <ComboBoxItem Content="{loc:Translate Key=SettingsScan30.Content}" />
+                        <ComboBoxItem Content="{loc:Translate Key=SettingsScan60.Content}" />
+                        <ComboBoxItem Content="{loc:Translate Key=SettingsScan300.Content}" />
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{loc:Translate Key=SettingsAdvancedHeader.Text}" Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                    <Expander Header="{loc:Translate Key=SettingsCategoryFiltersHeader.Text}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                        <ItemsControl ItemsSource="{x:Bind ViewModel.CategoryFilters}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate xmlns:vmm="using:Specht.App.ViewModels" x:DataType="vmm:CategoryFilterEntry">
+                                    <ToggleSwitch Header="{x:Bind Name}" IsOn="{x:Bind IsEnabled, Mode=TwoWay}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Expander>
+                </StackPanel>
+
+                <StackPanel Spacing="8">
+                    <TextBlock Text="{loc:Translate Key=SettingsResetHeader.Text}" Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                    <Button Content="{loc:Translate Key=SettingsResetButton.Content}" Command="{x:Bind ViewModel.ResetCommand}" />
+                </StackPanel>
+
+                <TextBlock Text="{x:Bind VersionText, Mode=OneTime}" Opacity="0.5" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,16,0,0" />
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

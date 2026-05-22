@@ -1,0 +1,108 @@
+<svg viewBox="80 128 608 608" xmlns="http://www.w3.org/2000/svg">
+  <!-- transparent background — Mica / theme color shows through -->
+
+  <!-- =============== TREE TRUNK (low-poly) =============== -->
+  <!-- Top half, left column (darkest) -->
+  <polygon points="92,128 135,128 130,400" fill="#3D2510"/>
+  <polygon points="92,128 130,400 85,400" fill="#2D1A0B"/>
+
+  <!-- Top half, mid column (lit) -->
+  <polygon points="135,128 178,128 175,400" fill="#7A4F2C"/>
+  <polygon points="135,128 175,400 130,400" fill="#5A3818"/>
+
+  <!-- Top half, right column (shadow) -->
+  <polygon points="178,128 208,128 218,400" fill="#5A3818"/>
+  <polygon points="178,128 218,400 175,400" fill="#3D2510"/>
+
+  <!-- Bottom half, left column -->
+  <polygon points="85,400 130,400 140,736" fill="#2D1A0B"/>
+  <polygon points="85,400 140,736 95,736" fill="#3D2510"/>
+
+  <!-- Bottom half, mid column -->
+  <polygon points="130,400 175,400 180,736" fill="#5A3818"/>
+  <polygon points="130,400 180,736 140,736" fill="#7A4F2C"/>
+
+  <!-- Bottom half, right column -->
+  <polygon points="175,400 218,400 215,736" fill="#3D2510"/>
+  <polygon points="175,400 215,736 180,736" fill="#5A3818"/>
+
+  <!-- Bark texture: scattered low-poly accents -->
+  <polygon points="108,170 130,165 116,215" fill="#2D1A0B"/>
+  <polygon points="155,245 178,240 165,290" fill="#9C6234"/>
+  <polygon points="100,315 125,308 113,355" fill="#1A0F08"/>
+  <polygon points="185,330 208,325 195,378" fill="#2D1A0B"/>
+  <polygon points="98,460 125,455 115,510" fill="#2D1A0B"/>
+  <polygon points="150,485 175,478 162,535" fill="#9C6234"/>
+  <polygon points="188,540 215,535 203,592" fill="#3D2510"/>
+  <polygon points="108,605 132,600 120,660" fill="#2D1A0B"/>
+  <polygon points="158,665 182,660 170,720" fill="#5A3818"/>
+  <polygon points="195,650 215,648 208,700" fill="#3D2510"/>
+
+  <!-- Knot/whorl near where the woodpecker pecks -->
+  <polygon points="148,275 175,280 168,308" fill="#1A0F08"/>
+  <polygon points="148,275 168,308 142,302" fill="#0F0805"/>
+  <polygon points="156,283 168,295 159,304" fill="#3D2510"/>
+
+  <!-- =============== SPECHT =============== -->
+  <!-- TAIL -->
+  <polygon points="470,560 540,540 500,720" fill="#1E2233"/>
+  <polygon points="470,560 500,720 430,700" fill="#272C40"/>
+  <polygon points="540,540 500,720 530,640" fill="#161A28"/>
+
+  <!-- RED VENT -->
+  <polygon points="380,560 470,560 415,640" fill="#E63946"/>
+  <polygon points="470,560 415,640 430,700" fill="#C81D25"/>
+  <polygon points="380,560 415,640 365,590" fill="#F2545B"/>
+
+  <!-- BODY BACK -->
+  <polygon points="500,205 540,360 410,290" fill="#2B2F45"/>
+  <polygon points="540,360 410,290 420,420" fill="#22273A"/>
+  <polygon points="540,360 420,420 545,470" fill="#1E2233"/>
+  <polygon points="545,470 420,420 470,520" fill="#272C40"/>
+  <polygon points="545,470 470,520 540,540" fill="#191D2C"/>
+  <polygon points="470,520 540,540 470,560" fill="#22273A"/>
+  <polygon points="470,520 470,560 415,540" fill="#1E2233"/>
+
+  <!-- WING + white spots -->
+  <polygon points="455,350 545,470 460,540" fill="#2B2F45"/>
+  <polygon points="545,470 460,540 470,520" fill="#1E2233"/>
+  <polygon points="455,350 460,540 410,460" fill="#272C40"/>
+  <polygon points="478,392 508,410 482,432" fill="#F4F1EA"/>
+  <polygon points="438,438 466,452 440,476" fill="#ECE8DE"/>
+  <polygon points="494,452 520,470 496,492" fill="#F8F5EF"/>
+  <polygon points="448,500 474,514 450,534" fill="#F1EDE4"/>
+
+  <!-- BELLY -->
+  <polygon points="352,330 410,290 420,420" fill="#FBF9F4"/>
+  <polygon points="352,330 420,420 360,440" fill="#F1EDE4"/>
+  <polygon points="420,420 360,440 410,460" fill="#FBF9F4"/>
+  <polygon points="360,440 410,460 372,540" fill="#F1EDE4"/>
+  <polygon points="410,460 372,540 415,540" fill="#FBF9F4"/>
+  <polygon points="372,540 415,540 380,560" fill="#ECE8DE"/>
+
+  <!-- THROAT -->
+  <polygon points="345,288 410,290 352,330" fill="#FBF9F4"/>
+  <polygon points="345,288 410,290 378,248" fill="#F1EDE4"/>
+
+  <!-- NAPE -->
+  <polygon points="500,205 410,290 478,290" fill="#22273A"/>
+  <polygon points="500,205 478,290 540,360" fill="#1E2233"/>
+  <polygon points="500,205 540,360 455,350" fill="#272C40"/>
+
+  <!-- HEAD white face -->
+  <polygon points="345,195 410,290 378,248" fill="#FBF9F4"/>
+  <polygon points="345,195 378,248 345,288" fill="#F1EDE4"/>
+
+  <!-- RED CROWN -->
+  <polygon points="345,195 430,150 410,290" fill="#E63946"/>
+  <polygon points="430,150 410,290 500,205" fill="#D62839"/>
+  <polygon points="430,150 500,205 408,196" fill="#F2545B"/>
+
+  <!-- EYE -->
+  <polygon points="372,238 398,232 388,258" fill="#15151E"/>
+
+  <!-- BEAK -->
+  <polygon points="222,248 345,224 348,262" fill="#6C757D"/>
+  <polygon points="222,248 348,262 345,288" fill="#495057"/>
+  <polygon points="345,224 348,262 345,195" fill="#7A828A"/>
+</svg>

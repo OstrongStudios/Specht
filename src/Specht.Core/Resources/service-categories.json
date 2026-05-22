@@ -1,0 +1,55 @@
+{
+  "$schema": "Mapping of mDNS service type (without trailing .local) to ServiceCategory enum name. Lookup is case-insensitive. Anything not listed falls back to Other.",
+  "mappings": {
+    "_airplay._tcp": "AirPlay",
+    "_raop._tcp": "AirPlay",
+
+    "_googlecast._tcp": "Cast",
+    "_amzn-wplay._tcp": "Cast",
+
+    "_spotify-connect._tcp": "Audio",
+    "_dacp._tcp": "Audio",
+
+    "_hap._tcp": "HomeKit",
+    "_homekit._tcp": "HomeKit",
+    "_matter._tcp": "HomeKit",
+    "_matterc._udp": "HomeKit",
+    "_matterd._udp": "HomeKit",
+
+    "_ipp._tcp": "Print",
+    "_ipps._tcp": "Print",
+    "_printer._tcp": "Print",
+    "_pdl-datastream._tcp": "Print",
+    "_uscan._tcp": "Print",
+    "_uscans._tcp": "Print",
+
+    "_smb._tcp": "FileShare",
+    "_afpovertcp._tcp": "FileShare",
+    "_nfs._tcp": "FileShare",
+    "_ftp._tcp": "FileShare",
+    "_webdav._tcp": "FileShare",
+    "_webdavs._tcp": "FileShare",
+
+    "_ssh._tcp": "RemoteControl",
+    "_sftp-ssh._tcp": "RemoteControl",
+    "_adb._tcp": "RemoteControl",
+    "_androidtvremote2._tcp": "RemoteControl",
+    "_companion-link._tcp": "RemoteControl",
+    "_rc._tcp": "RemoteControl",
+    "_rfb._tcp": "RemoteControl",
+
+    "_esphomelib._tcp": "IoT",
+    "_hwenergy._tcp": "IoT",
+    "_homewizard._tcp": "IoT",
+    "_ewelink._tcp": "IoT",
+    "_home-assistant._tcp": "IoT",
+    "_shelly._tcp": "IoT",
+    "_tasmota._tcp": "IoT",
+
+    "_workstation._tcp": "Other",
+    "_device-info._tcp": "Other",
+    "_http._tcp": "Other",
+    "_http-alt._tcp": "Other",
+    "_https._tcp": "Other"
+  }
+}
