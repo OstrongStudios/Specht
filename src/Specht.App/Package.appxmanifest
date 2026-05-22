@@ -6,12 +6,13 @@
   IgnorableNamespaces="uap rescap">
 
   <!--
-    Identity:
-    - Name: muss aus dem Microsoft Partner Center kommen, nachdem dort der
-      App-Name "Specht" unter dem OstrongStudios-Account reserviert wurde.
-      Bis dahin als Platzhalter mit dem Spieglein-Prefix versehen, damit das
-      Manifest sich lokal bauen lässt — ersetzen vor Store-Submission!
-    - Publisher: identisch zur Spieglein-Identity (selber Publisher-Account).
+    Identity bestätigt aus Microsoft Partner Center:
+      Package/Identity/Name        : 4663Ostronggames.Specht
+      Package/Identity/Publisher   : CN=654B9AD8-3E71-4D00-B420-E162C13CD666
+      Package Family Name (PFN)    : 4663Ostronggames.Specht_e5a5qvsqnd7j6
+      Package SID                  : S-1-15-2-1973772785-1236878376-4243339047-
+                                     3543867465-227456688-1186735822-1419149535
+      Store-ID                     : 9P2P2WNW8WWD
   -->
   <Identity
     Name="4663Ostronggames.Specht"
@@ -20,7 +21,7 @@
 
   <Properties>
     <DisplayName>Specht</DisplayName>
-    <PublisherDisplayName>OstrongStudios</PublisherDisplayName>
+    <PublisherDisplayName>Ostrong Studios</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
     <Description>Klopf klopf – wer wohnt im Netzwerk? Zeigt alle Geräte im lokalen Netzwerk, die per mDNS / Bonjour erreichbar sind. 100 % lokal, keine Telemetrie.</Description>
   </Properties>
