@@ -1,92 +1,46 @@
 # Specht
 
-*„Klopf klopf – wer wohnt im Netzwerk?"*
+*„Klopf klopf — wer wohnt im Netzwerk?"*
 
-Native Windows-Tray-App, die alle Geräte im lokalen Netzwerk per **mDNS / DNS-SD (Bonjour / Zeroconf)** anzeigt. Schwesterprojekt zu [Spieglein](https://github.com/OstrongStudios/spieglein) — gleiche Design-Sprache, gleiche Tech-Familie.
+Specht ist eine schlanke Windows-Tray-App, die dir auf einen Blick zeigt, welche Geräte gerade in deinem lokalen Netzwerk erreichbar sind — Drucker, Smart-TVs, AirPlay-Lautsprecher, HomeKit-Zubehör, NAS, Streaming-Empfänger und alles andere, das **mDNS / DNS-SD (Bonjour / Zeroconf)** spricht.
 
-## Status
+Klick aufs Tray-Icon, sieh die Liste, klick auf ein Gerät für Details (IPs, Port, Service-Typ, TXT-Records). Fertig.
 
-Frühe Entwicklung. M1 (Discovery-Kern) und Grundgerüst M2 (UI-Shell mit Tray + Hauptliste) stehen. Detailansicht, Settings, Toast-Notifications, Export und Lokalisierung folgen.
+## Features
 
-## Tech-Stack
+- 🐦 **Tray-First** — sitzt unauffällig im Benachrichtigungsbereich, öffnet sich auf Klick als kompaktes Dropdown
+- 🔍 **Suche + Kategorie-Filter** — AirPlay, Cast, Print, HomeKit, FileShare, IoT, Audio, …
+- 📋 **Detailansicht** — alle IPv4-/IPv6-Adressen, Port, vollständiger Service-Typ, TXT-Records, Erstmals-/Letztmals-Gesehen-Zeitstempel
+- 📤 **Export** — Geräteliste als CSV (Excel-DE-kompatibel) oder JSON
+- 🔔 **Toast bei neuen Geräten** — optional aktivierbar
+- 🌍 **Deutsch & Englisch** — folgt dem System oder manuell wählbar
+- 🌓 **Dark- & Light-Mode** — folgt Windows-Theme oder manuell
+- 🔒 **100 % lokal** — keine Telemetrie, keine Cloud, kein Konto. Datenschutz: siehe [docs/PRIVACY.de.md](docs/PRIVACY.de.md)
 
-- **.NET 10** (LTS, Nov 2025 → Nov 2028)
-- **WinUI 3 / Windows App SDK 2.0**
-- **Makaretu.Dns.Multicast.New** für mDNS (MIT)
-- **H.NotifyIcon.WinUI** für Tray-Integration (MIT)
-- **CommunityToolkit.Mvvm** für MVVM-Boilerplate (MIT)
+## Installation
 
-## Build
+Über den **[Microsoft Store](https://www.microsoft.com/store/apps/9P2P2WNW8WWD)** *(Link wird aktiv, sobald die App live ist)*.
 
-### Voraussetzungen
-- Visual Studio 2022 (17.10+) oder Visual Studio 2026
-- Workload „Windows App SDK C# Templates" (über Visual Studio Installer)
-- .NET 10 SDK
-- Windows 10 Build 19041+ oder Windows 11
+## Anforderungen
 
-### In Visual Studio
-1. `src/Specht.sln` öffnen
-2. Konfiguration `Debug | x64` wählen
-3. F5
+Windows 10 (ab Build 19041) oder Windows 11, x64 oder ARM64.
 
-### Via CLI (unpackaged, schneller Dev-Modus)
-```powershell
-cd src
-dotnet build Specht.App\Specht.App.csproj -c Debug -p:Platform=x64
-dotnet publish Specht.App\Specht.App.csproj -c Debug -r win-x64 --self-contained=false -p:WindowsAppSDKSelfContained=true
-.\Specht.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\publish\Specht.exe
-```
+## Schwester-App
 
-### MSIX-Paket bauen (Store-Modus)
-```powershell
-cd src
-dotnet build Specht.App\Specht.App.csproj -c Release -p:Platform=x64 -p:WindowsPackageType=MSIX -p:AppxPackageSigningEnabled=false
-```
-Output: `src/Specht.App/AppPackages/Specht.App_<version>_Test/Specht.App_<version>_x64.msix`
-
-Zum **lokalen Installieren** des unsignierten MSIX:
-1. Im **Windows Update**: Entwicklermodus aktivieren (Einstellungen → Datenschutz & Sicherheit → Für Entwickler → Entwicklermodus an)
-2. `Add-AppxPackage -Path "...\Specht.App_1.0.0.0_x64.msix"` in PowerShell
-
-Zum **signieren** mit selbst-erstelltem Zertifikat (für Verteilung):
-```powershell
-$cert = New-SelfSignedCertificate -Type Custom -Subject "CN=Ostronggames" -KeyUsage DigitalSignature -FriendlyName "Specht-Sign" -CertStoreLocation "Cert:\CurrentUser\My"
-$pwd = ConvertTo-SecureString -String "specht" -Force -AsPlainText
-Export-PfxCertificate -Cert "Cert:\CurrentUser\My\$($cert.Thumbprint)" -FilePath "specht.pfx" -Password $pwd
-# Im Build dann:
-dotnet build Specht.App\Specht.App.csproj -c Release -p:Platform=x64 -p:WindowsPackageType=MSIX -p:PackageCertificateKeyFile=..\specht.pfx -p:PackageCertificatePassword=specht
-```
-
-Für die **Store-Submission** den VS-Wizard nutzen: Rechtsklick auf Specht.App → Veröffentlichen → Microsoft Store. Identity Name/Publisher werden dabei vom Partner Center automatisch übernommen.
-
-## Projektstruktur
-
-```
-Specht/
-├── mdns-spotter-spec.md       Pflichtenheft (Auftraggeber-Doku)
-├── spike/                     Erste Library-Validierung (Throwaway)
-├── src/
-│   ├── Specht.sln
-│   ├── Specht.Core/           Datenmodell + Discovery (.NET 10 Klassenbibliothek)
-│   │   ├── Models/            Device, ServiceCategory
-│   │   ├── Services/          DiscoveryService, DeviceCache
-│   │   └── ServiceTypeMapping.cs
-│   └── Specht.App/            WinUI 3 Tray-App (.NET 10)
-│       ├── App.xaml(.cs)      App-Lifecycle + Tray-Icon
-│       ├── MainWindow.xaml    Tray-Dropdown 420×640
-│       └── ViewModels/        MVVM (Toolkit)
-└── docs/
-    └── THIRD_PARTY_LICENSES.md
-```
+Specht gehört zur selben Familie wie **[Spieglein](https://www.microsoft.com/store/apps/9PL8FXP2VT14)** — ein AirPlay-Empfänger für Windows. Wenn dich der Spieglein-Stil anspricht, fühlst du dich auch in Specht zuhause.
 
 ## Lizenz
 
-**GPL v3** — siehe [LICENSE](LICENSE).
+Specht ist **freie Software unter der [GNU General Public License v3](LICENSE)**. Quellcode öffentlich, dauerhaft.
 
-Drittsoftware: siehe [docs/THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).
+Verwendete Open-Source-Komponenten und ihre Lizenzen: siehe [docs/THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).
 
-*„Nicht von Apple Inc. Bonjour ist eine eingetragene Marke von Apple Inc."*
+*Nicht von Apple Inc. Bonjour, AirPlay und HomeKit sind eingetragene Marken von Apple Inc. Chromecast ist eine Marke von Google LLC.*
 
-## Auftraggeber
+## Mitwirken
 
-[Ostrong Studios](https://www.ostrongstudios.de)
+Build aus dem Quellcode, Tests laufen lassen, Pull Requests: siehe [docs/BUILDING.md](docs/BUILDING.md).
+
+## Herausgeber
+
+[Ostrong Studios](https://www.ostrongstudios.de) — Mathias Oysmüller, Österreich.
