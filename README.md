@@ -33,7 +33,7 @@ Specht gehört zur selben Familie wie **[Spieglein](https://www.microsoft.com/st
 
 Specht ist **freie Software unter der [GNU General Public License v3](LICENSE)**. Quellcode öffentlich, dauerhaft.
 
-Verwendete Open-Source-Komponenten und ihre Lizenzen: siehe [docs/THIRD_PARTY_LICENSES.md](docs/THIRD_PARTY_LICENSES.md).
+Verwendete Open-Source-Komponenten und Markenhinweise: siehe [NOTICE.md](NOTICE.md).
 
 *Nicht von Apple Inc. Bonjour, AirPlay und HomeKit sind eingetragene Marken von Apple Inc. Chromecast ist eine Marke von Google LLC.*
 
