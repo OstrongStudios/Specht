@@ -15,7 +15,7 @@ Web: https://ostrongstudios.de
 
 ## 2. Zweck und Funktionsweise der Anwendung
 
-„Specht" ist eine Windows-Anwendung, die Geräte im lokalen Netzwerk per **mDNS / DNS-SD (Bonjour / Zeroconf)** erkennt und in einer Liste anzeigt. Die App lauscht passiv auf Multicast-Antworten anderer Geräte (Drucker, Smart-TVs, HomeKit-Zubehör, NAS, Streaming-Empfänger u.ä.) und stellt deren Hostnamen, IP-Adressen, Service-Typen und Metadaten dar.
+„Specht" ist eine Windows-Anwendung, die Geräte im lokalen Netzwerk per **mDNS / DNS-SD (Bonjour / Zeroconf)** erkennt und in einer Liste anzeigt. Die App **sendet aktive mDNS-Anfragen ins lokale Netzwerk** (Multicast-Pakete auf UDP 5353) und empfängt die Antworten der erreichbaren Geräte (Drucker, Smart-TVs, HomeKit-Zubehör, NAS, Streaming-Empfänger u.ä.). Aus diesen Antworten werden Hostnamen, IP-Adressen, Service-Typen und Metadaten dargestellt.
 
 Die gesamte Kommunikation erfolgt **ausschließlich lokal im selben WLAN/LAN** zwischen Ihrem PC und den anderen Geräten in Ihrem Netzwerk. Eine Übertragung von Daten an externe Server findet **nicht** statt.
 
@@ -29,6 +29,8 @@ Bei der Nutzung von Specht werden folgende Daten verarbeitet, **ausschließlich 
 | Hostnamen, IPv4-/IPv6-Adressen, Service-Typen, Ports und TXT-Records der im LAN erreichbaren Geräte | flüchtig im Arbeitsspeicher | Anzeige der Geräteliste während der Laufzeit |
 | Zeitstempel der ersten und letzten Sichtung pro Gerät | flüchtig im Arbeitsspeicher | Anzeige in der Detailansicht |
 | Manuell exportierte Listen (CSV/JSON) | von Ihnen gewählter Pfad | Ausschließlich auf Ihre aktive Speichern-Aktion hin |
+| Autostart-Eintrag (nur wenn von Ihnen in den Einstellungen aktiviert) | `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Specht` (Windows-Registrierung) | Automatischer Start mit Windows. Inhalt ist ausschließlich der Programmpfad. Wird beim Deaktivieren wieder entfernt. |
+| Benachrichtigungs-Inhalt bei neuen Geräten (nur wenn von Ihnen in den Einstellungen aktiviert) | Übergabe an die Windows-Benachrichtigungs-API (Action Center) | Anzeige einer Toast-Benachrichtigung. Übergabe erfolgt prozess-intern an Windows, kein externer Versand. |
 
 **Keine dieser Daten verlassen Ihren PC.** Es findet keine Übermittlung an Ostrong Studios, Apple Inc., Microsoft Corporation oder Dritte statt.
 
