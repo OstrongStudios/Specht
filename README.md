@@ -37,9 +37,18 @@ Verwendete Open-Source-Komponenten und ihre Lizenzen: siehe [docs/THIRD_PARTY_LI
 
 *Nicht von Apple Inc. Bonjour, AirPlay und HomeKit sind eingetragene Marken von Apple Inc. Chromecast ist eine Marke von Google LLC.*
 
-## Mitwirken
+## Build aus dem Quellcode
 
-Build aus dem Quellcode, Tests laufen lassen, Pull Requests: siehe [docs/BUILDING.md](docs/BUILDING.md).
+Voraussetzungen: **Visual Studio 2022** (17.10+) mit Workload „Windows-App-Entwicklung", **.NET 10 SDK**.
+
+```powershell
+git clone https://github.com/OstrongStudios/Specht.git
+cd Specht
+# In Visual Studio:  src/Specht.sln öffnen, Debug | x64, F5
+# Tests:             dotnet test tests/Specht.Core.Tests
+```
+
+Pull Requests willkommen, vor dem Commit bitte `dotnet test` laufen lassen.
 
 ## Herausgeber
 
