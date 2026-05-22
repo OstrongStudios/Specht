@@ -91,7 +91,7 @@ Web: https://www.dsb.gv.at
 
 ## 10. Stand und Änderungen
 
-Diese Datenschutzerklärung ist gültig ab dem **17. Mai 2026**. Bei Anpassungen der Anwendung oder bei Änderungen gesetzlicher Vorgaben behalten wir uns vor, diese Erklärung anzupassen. Die jeweils aktuelle Fassung ist unter https://ostrongstudios.de/datenschutzerklaerung/ einsehbar.
+Diese Datenschutzerklärung ist gültig ab dem **17. Mai 2026**. Bei Anpassungen der Anwendung oder bei Änderungen gesetzlicher Vorgaben behalten wir uns vor, diese Erklärung anzupassen. Die jeweils aktuelle Fassung ist im Microsoft-Store-Eintrag von Specht sowie im öffentlichen Quellcode-Repository unter https://github.com/OstrongStudios/Specht (Datei `docs/PRIVACY.de.md`) einsehbar.
 
 ---
 

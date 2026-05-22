@@ -91,7 +91,7 @@ Web: https://www.dsb.gv.at
 
 ## 10. Version and changes
 
-This privacy policy is valid from **17 May 2026**. We reserve the right to adapt this policy in response to changes to the application or to legal requirements. The current version is available at https://ostrongstudios.de/datenschutzerklaerung/.
+This privacy policy is valid from **17 May 2026**. We reserve the right to adapt this policy in response to changes to the application or to legal requirements. The current version is available via the Microsoft Store listing for Specht and in the public source-code repository at https://github.com/OstrongStudios/Specht (file `docs/PRIVACY.en.md`).
 
 ---
 
