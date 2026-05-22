@@ -26,8 +26,24 @@
     <NoWarn>$(NoWarn);MVVMTK0045</NoWarn>
     <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
     <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-    <EnableMrtResourceManager>true</EnableMrtResourceManager>
-    <WindowsAppSDKGenerateProjectPriFile>true</WindowsAppSDKGenerateProjectPriFile>
+    <!--
+      MRT-Properties nur im unpackaged Dev-Modus erzwingen. Im MSIX-Build
+      schließen sie die Standard-Resource-Pipeline kurz, wodurch nur die
+      System-Default-Sprache (en-US) in resources.pri landet — Store sieht
+      dann nur eine Sprache.
+    -->
+    <EnableMrtResourceManager Condition="'$(WindowsPackageType)' == 'None'">true</EnableMrtResourceManager>
+    <WindowsAppSDKGenerateProjectPriFile Condition="'$(WindowsPackageType)' == 'None'">true</WindowsAppSDKGenerateProjectPriFile>
+    <!--
+      Default-Sprache im MSIX-Build: en-US.
+      Language-Splitting OUT — sonst legt MakePri ein split.language-de.pri an,
+      MakeAppx baut daraus aber kein separates Resource-MSIX, und das de-DE-Stueck
+      faellt komplett aus der finalen resources.pri. Folge: Store sieht nur 1 Sprache.
+      Mit reduced Qualifier-Liste landen ALLE Sprachen direkt in der Architektur-MSIX.
+      Bei 2 Sprachen + ~70 Keys ist die zusaetzliche Groesse vernachlaessigbar.
+    -->
+    <DefaultLanguage Condition="'$(WindowsPackageType)' == 'MSIX'">en-US</DefaultLanguage>
+    <AppxBundleAutoResourcePackageQualifiers Condition="'$(WindowsPackageType)' == 'MSIX'">Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
   </PropertyGroup>
 
   <ItemGroup>
